@@ -6,7 +6,7 @@
 // 1. Parámetros de la Base de Datos
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PASS', 'pass');
+define('DB_PASS', '');
 define('DB_NAME', 'miseventos');
 
 // 2. Parámetros Generales de la Plataforma
