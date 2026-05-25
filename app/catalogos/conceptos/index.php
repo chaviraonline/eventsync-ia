@@ -68,6 +68,6 @@
 </div>
 
 <!-- Archivo lógico del módulo -->
-<script src="assets/js/conceptos.js"></script>
+<script src="assets/ajax/conceptos.js"></script>
 
 <?php include '../../includes/footer.php'; ?>

@@ -5,7 +5,7 @@ $(document).ready(function() {
     const inicializarTabla = () => {
         tablaConceptos = $('#tablaConceptos').DataTable({
             "ajax": {
-                "url": "ajax/procesar_conceptos.php",
+                "url": "php/operaciones_conceptos.php",
                 "type": "POST",
                 "data": { accion: 'leer' },
                 "dataSrc": "data"
@@ -83,7 +83,7 @@ $(document).ready(function() {
         btn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin"></i> Guardando...');
 
         $.ajax({
-            url: "ajax/procesar_conceptos.php",
+            url: "php/operaciones_conceptos.php",
             type: "POST",
             data: $(this).serialize(),
             dataType: "json",
@@ -121,7 +121,7 @@ $(document).ready(function() {
             confirmButtonText: 'Sí, continuar'
         }).then((result) => {
             if (result.isConfirmed) {
-                $.post("ajax/procesar_conceptos.php", { accion: accionEstado, IdConcepto: id }, function(res) {
+                $.post("php/operaciones_conceptos.php", { accion: accionEstado, IdConcepto: id }, function(res) {
                     if(res.status === 'success') {
                         tablaConceptos.ajax.reload(null, false);
                         Swal.fire('Actualizado', res.message, 'success');
